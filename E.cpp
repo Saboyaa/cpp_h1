@@ -15,7 +15,10 @@ int main(){
         itup = myset.lower_bound(b);
         itup2 = myset.lower_bound(h);
         if(d=='?'&&c=='+'){
+            if(itup2!=myset.end()){
             myset.insert((*itup2+b)%(int(pow(10,9))));
+            }
+            else{myset.insert((-1+b)%(int(pow(10,9))));}
         }
         else if(c=='+'){
             myset.insert(b);
@@ -25,7 +28,7 @@ int main(){
             if(itup!=myset.end()){
             cout<<*itup<<'\n';
             }
-            else{cout<<"-1";}
+            else{cout<<"-1"<<'\n';}
         }
         h = b;
     }
